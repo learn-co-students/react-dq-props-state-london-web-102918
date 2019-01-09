@@ -25,15 +25,20 @@ export default class BabyHog extends Component {
     })
   }
 
+  changeImage = () =>{
+  let babyImage = normalBaby
+  if (this.props.eyeColor === 'blue') {
+    babyImage = BlueBaby
+  } else if (this.props.eyeColor === 'sun'){
+    babyImage = SunBaby
+  } else if (this.props.eyeColor === 'glowing'){
+    babyImage = GlowingBaby
+  }
+  return babyImage
+}
+
   render() {
-    let babyImage = normalBaby
-    if (this.props.eyeColor === 'blue') {
-      babyImage = BlueBaby
-    } else if (this.props.eyeColor === 'sun'){
-      babyImage = SunBaby
-    } else if (this.props.eyeColor === 'glowing'){
-      babyImage = GlowingBaby
-    }
+
     return (
       <li className="hogbabies">
         <h1>Name: {this.props.name}</h1>
@@ -49,7 +54,7 @@ export default class BabyHog extends Component {
         </Button>
 
         <div className="hb-wrap">
-          <img src={babyImage} style={{height: '200px'}} alt="MasterBlasterJrJr" />
+          <img src={this.changeImage()} style={{height: '200px'}} alt="MasterBlasterJrJr" />
         </div>
 
       </li>
