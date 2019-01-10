@@ -3,13 +3,11 @@ import MasterHog from './MasterHog'
 import './App.css'
 
 export default class App extends Component {
-  
-  render() {
+  render () {
     return (
-      <div className="App">
+      <div className='App'>
         <MasterHog />
       </div>
     )
   }
-
 }
